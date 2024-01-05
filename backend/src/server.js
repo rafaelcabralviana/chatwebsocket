@@ -1,24 +1,4 @@
 
-const http = require('http');
-const fs = require('fs');
-
-const server = http.createServer((req, res) => {
-  fs.readFile(__dirname + './js/script.js', (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end(JSON.stringify(err));
-      return;
-    }
-    res.writeHead(200);
-    res.end(data);
-  });
-});
-
-server.listen(8000);
-
-
-
-
 const { WebSocketServer } = require("ws")
 const dotenv = require("dotenv")
 
